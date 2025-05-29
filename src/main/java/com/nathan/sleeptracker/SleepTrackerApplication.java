@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SleepTrackerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SleepTrackerApplication.class, args);
+        var context = SpringApplication.run(SleepTrackerApplication.class, args);
+        var questionnaire = context.getBean(Questionnaire.class);
+        questionnaire.run();
+
     }
 
 }

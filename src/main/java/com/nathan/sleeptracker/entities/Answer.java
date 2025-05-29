@@ -53,9 +53,9 @@ public class Answer{
     private int wakeCount;            // number of awakenings
 
     @Column(name = "efficiency_actual_pct")
-    private Integer efficiencyActualPct;
+    private Double efficiencyActualPct;
 
     @Column(name = "efficiency_vs_target_pct")
-    private Integer efficiencyVsTargetPct;
+    private Double efficiencyVsTargetPct;
 
 }
