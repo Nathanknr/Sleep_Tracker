@@ -2,6 +2,7 @@ package com.nathan.sleeptracker.services;
 
 import com.nathan.sleeptracker.entities.Answer;
 import com.nathan.sleeptracker.repositories.AnswerRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ public class AnswerService {
     public AnswerService(AnswerRepository answerRepository) {
         this.answerRepository = answerRepository;
     }
+
 
     public Answer saveAnswer(Answer answer) {
         // Calculate efficiency metrics before saving
@@ -30,7 +32,10 @@ public class AnswerService {
 
         return answerRepository.save(answer);
     }
-
+    @Transactional
+    public void deleteById(Long id) {
+        answerRepository.deleteById(id);
+    }
     /**
      * Computes actual sleep efficiency as:
      *   (time actually asleep) ÷ (total time in bed) × 100
@@ -46,6 +51,8 @@ public class AnswerService {
         if (timeInBed == 0) return 0;
         return roundTo2SigFigs((double) totalSleep / timeInBed * 100);
     }
+
+
 
     /**
      * Compares actual sleep to the target sleep window:
@@ -63,6 +70,23 @@ public class AnswerService {
         return roundTo2SigFigs((double) totalSleep / targetSleepWindow * 100);
     }
 
+
+
+    public int convertToMinutes(String timeInHour){
+        try {
+            // Parse HH:MM
+            String[] timeParts= timeInHour.split(":");
+
+            int hours = Integer.parseInt(timeParts[0]);
+            int minutes = Integer.parseInt(timeParts[1]);
+
+            // Convert to minutes since midnight
+            return hours * 60 + minutes;
+
+       } catch (Exception e) {
+            return 0;
+        }
+    }
     /**
      * Calculates the target sleep window in minutes between bedtime and wake time.
      * Handles cases where wake time is past midnight.

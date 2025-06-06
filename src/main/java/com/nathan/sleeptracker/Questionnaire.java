@@ -33,8 +33,8 @@ public class Questionnaire {
             String wakeTimeActual = prompt("Enter actual wake time (HH:MM): ");
             int napMinutes = parseInt(prompt("Enter nap duration in minutes: "));
             int sleepQualityScore = parseInt(prompt("Enter sleep quality score (1-5): "));
-            int totalSleepMinutes = parseInt(prompt("Enter total sleep duration in minutes: "));
-            int awakeMinutes = parseInt(prompt("Enter minutes awake during the night: "));
+            String totalSleepMinutes = prompt("Enter total sleep duration (HH:MM): ");
+            int awakeMinutes = parseInt(prompt("Enter minutes awake during the night outside of time to fall asleep: "));
             int sleepLatencyMinutes = parseInt(prompt("Enter time to fall asleep in minutes: "));
             int wakeCount = parseInt(prompt("Enter number of awakenings: "));
             String notes = prompt("Any additional notes? (press Enter to skip): ");
@@ -47,7 +47,7 @@ public class Questionnaire {
                     .wakeTimeActual(wakeTimeActual)
                     .napMinutes(napMinutes)
                     .sleepQualityScore(sleepQualityScore)
-                    .totalSleepMinutes(totalSleepMinutes)
+                    .totalSleepMinutes(answerService.convertToMinutes(totalSleepMinutes))
                     .awakeMinutes(awakeMinutes)
                     .sleepLatencyMinutes(sleepLatencyMinutes)
                     .wakeCount(wakeCount)
