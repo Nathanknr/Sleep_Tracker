@@ -1,7 +1,7 @@
 # Sleep Tracker
 
 A simple command-line sleep tracking application built in Rust that helps you monitor your sleep patterns, quality, and efficiency over time.
-Tracks your sleep during sleep restriction therapy
+It helps you track your sleep during sleep restriction therapy. 
 ## Features
 
 - **Sleep Data Entry**: Record detailed sleep metrics including bedtime, wake times, sleep quality, and disturbances
