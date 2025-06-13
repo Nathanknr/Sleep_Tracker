@@ -31,3 +31,14 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Rust build artifacts
+/target/
+Cargo.lock
+
+# SQLite database files
+*.sqlite
+*.sqlite3
+*.db
+tracker.sqlite
+*.jar
