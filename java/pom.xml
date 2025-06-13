@@ -17,18 +17,6 @@
     </properties>
 
     <dependencies>
-        <!-- JDBI for lightweight SQL object binding -->
-        <dependency>
-            <groupId>org.jdbi</groupId>
-            <artifactId>jdbi3-core</artifactId>
-            <version>3.36.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jdbi</groupId>
-            <artifactId>jdbi3-sqlobject</artifactId>
-            <version>3.36.0</version>
-        </dependency>
-
         <!-- SQLite JDBC driver -->
         <dependency>
             <groupId>org.xerial</groupId>
@@ -49,6 +37,18 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.36</version>
+        </dependency>
+
+        <!-- JDBI upgraded to 3.49.4 for native-image compatibility -->
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3-core</artifactId>
+            <version>3.49.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3-sqlobject</artifactId>
+            <version>3.49.4</version>
         </dependency>
     </dependencies>
 
@@ -96,26 +96,28 @@
                 <executions>
                     <execution>
                         <id>build-native</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>compile-no-fork</goal>
                         </goals>
-                        <phase>package</phase>
+                        <configuration>
+                            <imageName>sleep-tracker</imageName>
+                            <mainClass>com.nathan.sleeptracker.SleepTrackerApp</mainClass>
+                            <buildArgs>
+                                <buildArg>--no-fallback</buildArg>
+                                <buildArg>--enable-preview</buildArg>
+                                <!-- Include your reflect-config.json here -->
+                                <buildArg>-H:ReflectionConfigurationFiles=src/main/resources/META-INF/native-image/reflect-config.json</buildArg>
+                            </buildArgs>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <imageName>sleep-tracker</imageName>
-                    <mainClass>com.nathan.sleeptracker.SleepTrackerApp</mainClass>
-                    <buildArgs>
-                        <buildArg>--no-fallback</buildArg>
-                        <buildArg>--enable-preview</buildArg>
-                    </buildArgs>
-                </configuration>
             </plugin>
         </plugins>
     </build>
 
     <profiles>
-        <!-- Profile for native image compilation -->
+        <!-- Profile for native image compilation (optional) -->
         <profile>
             <id>native</id>
             <build>
@@ -123,15 +125,7 @@
                     <plugin>
                         <groupId>org.graalvm.buildtools</groupId>
                         <artifactId>native-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>build-native</id>
-                                <goals>
-                                    <goal>compile-no-fork</goal>
-                                </goals>
-                                <phase>package</phase>
-                            </execution>
-                        </executions>
+                        <!-- inherits the same executions/configuration above -->
                     </plugin>
                 </plugins>
             </build>
