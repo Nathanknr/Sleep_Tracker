@@ -41,4 +41,12 @@ Cargo.lock
 *.sqlite3
 *.db
 tracker.sqlite
+# Rust
+/target/
+
+# Java (Maven)
+/java/target/
+
+# Ignore any JARs
 *.jar
+
