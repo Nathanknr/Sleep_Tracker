@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11b1b4e8-051b-469e-ab8d-c4f608f30198" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ideas.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nathan/sleeptracker/Answer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nathan/sleeptracker/AnswerDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nathan/sleeptracker/SleepTrackerApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/sleep-tracker" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracker.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +85,7 @@
     &quot;Spring Boot.SleepTrackerApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nathan/Projects/IdeaProjects/IdeaProjects/Job&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nathan/Projects/IdeaProjects/LeitnerSpring&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -177,6 +163,12 @@
       <workItem from="1749672018225" duration="462000" />
       <workItem from="1749756886231" duration="5309000" />
       <workItem from="1749795726267" duration="3556000" />
+      <workItem from="1749799288810" duration="4935000" />
+      <workItem from="1749808901703" duration="78000" />
+      <workItem from="1749898172422" duration="810000" />
+      <workItem from="1749898992588" duration="7000" />
+      <workItem from="1749924501428" duration="274000" />
+      <workItem from="1750073622188" duration="338000" />
     </task>
     <servers />
   </component>
